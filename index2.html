@@ -1,0 +1,498 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>test</title>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+	<style>
+		body
+		{
+			background: #000002 url('https://photo.mac69.com/180903/EPS-180903_225/WYyFz4SBaz_small.jpg') repeat;
+		}
+		h1
+		{
+			display: none;
+			font-size: 0px;
+			height: 0;
+			overflow: hidden;
+		}
+		#idv_font_bg
+		{
+   			display: none;
+		}
+		*
+		{
+			touch-action: pan-y; 
+			margin: 0;
+			padding: 0;
+		}
+		a:link,a:visited
+		{
+			color:#eee!important;
+			text-decoration: none;
+		}
+		a:hover{
+			letter-spacing: 5px;
+			transition:0.4s;
+			color:#bf7474!important;
+		}
+		.wrap2
+		{
+			display: flex;
+			justify-content: space-around;
+			background: #000002;
+			margin: 0 auto;
+			width: 75%;
+		}
+		.space{
+			width: 100px;
+		}
+		.title
+		{
+			font-family:'Lora';
+			font-size: 40px;
+			color:#eee;
+			line-height: 40px;
+		}
+		.wrap{
+			display: flex;
+			justify-content: flex-end;
+			flex-wrap:wrap;
+			background: #000002;
+		}
+		.feild
+		{
+			margin: 0;
+			width: 100px;
+		}
+		.btn
+		{
+			width: 100%;
+			height: 40px;
+			line-height: 30px;
+			background:#000002;
+			text-align: center;
+		}
+		.img2
+		{
+			padding: 5px;
+			width:40px;
+			box-sizing: border-box;
+		}
+		.cont
+		{
+			display: flex;
+			background:#000002;
+			color:#eee;
+			position: absolute;
+			left: 7.5%;
+			right: 7.5%;
+			top: 40px;
+			width: 75%;
+			margin: 0 auto;
+			background: #000002;
+			font-family: "微軟正黑體";
+			height: calc(100% - 40px);
+			overflow: scroll;
+		}
+		.lorem
+		{
+			width: 50%;
+			margin: auto;
+			color:#eee;
+			text-align: center;
+			display: flex;
+			flex-wrap: wrap;
+		}
+		.bigword{
+			width: 40%;
+			font-size: 35px;
+			margin: auto;
+			text-shadow: 0px 5px 15px #eee;
+		}
+		.bigword p{
+			font-size: 10px;
+		}
+		.t
+		{
+			width: 60%;
+			height: 200px;
+			display: flex;
+			flex-wrap: wrap;
+			margin: auto;
+		}
+		.img
+		{
+			width: 44%;
+			padding:10vw 2%;
+			margin: auto 0;
+			box-sizing: border-box;
+		}
+		.img img
+		{
+			width: 100%;
+			border-radius: 30px;
+		}
+
+		.c2 .lorem{
+			width: 100%;
+		}
+		.wt
+		{
+			display: flex;
+			flex-wrap: wrap;
+			width: 100%;
+			height: 60%;
+			margin: auto 20px;
+		}
+		.tiny
+		{
+			width: 100%;
+			margin: auto;
+		}
+		::-webkit-scrollbar{display:none;}
+		::-ms-scrollbar{display:none;}
+		::-mos-scrollbar{display:none;}
+		::selection 
+		{
+		    background: #000;
+		    color: #bf7474;
+		    font-weight: bold;
+		}
+		.block1{display: none;}
+		.block2{display: flex;}
+		.c3{
+			display: flex;
+			flex-wrap: wrap;
+		}
+		.c3 .img
+		{
+			padding: 0;
+			overflow: hidden;
+			width: 80%;
+			margin: auto;
+		}
+		.c3 .lorem
+		{
+			width: 80%;
+		}
+		.changecolor{background: #bf7474;}
+
+		@media screen and (max-width: 768px) 
+		{
+			.wt
+			{
+				margin: 10px 20px;
+			}
+			.block1{display: block;}
+			.block2{display: none;}
+			.bigword,.t
+			{
+				width: 100%;
+
+			}
+			.space
+			{
+				display: none;
+			}
+			.wrap2
+			{
+				justify-content: center;
+				padding: 0 30px;
+				box-sizing: border-box;
+				margin: 0;
+				width: 100%;
+			}
+			.wrap{
+				z-index: 99;
+				position: fixed;
+				justify-content: space-around;
+				height: 60px;
+				right: 0;
+				left:0;
+				bottom: 0;
+				top:calc(100% - 40px);
+			}
+			.cont{
+				height: calc(100% - 80px);
+				flex-wrap: wrap;
+				top:40px;
+				z-index: -99;
+				position: fixed;
+				width: 100%;
+				left:0;
+				right:0;
+				bottom:40px;
+				overflow: scroll;
+			}
+			.lorem
+			{
+				height: 500px;
+				width: 80%;
+				margin: auto;
+				text-align: center;
+			}
+			.img
+			{
+				width: 100%;
+				margin: auto;
+				padding: 15px;
+				box-sizing: border-box;
+			}
+			.img2
+			{
+				width: 30px;
+
+			}
+			.feild
+			{
+				width: 20%;
+			}
+			.img img
+			{
+				width: 100%;
+			}
+		}
+
+			.addwrap2{
+				height: 100%;
+				width: 100%;
+				position: absolute;
+				left: 0;
+				top:0;
+			}
+			.addwrap
+			{
+				margin: auto;
+				position: fixed;
+				top: 0;
+				bottom: 0;
+				left: 10%;
+				right: 10%;
+				width: 350px;
+				height: 350px;
+				flex-wrap: nowrap;
+				margin: auto;
+			}
+			.addfeild
+			{
+				margin: auto 0;
+				height: 30px;
+
+			}
+			.addcont{
+				display: none!important;
+			}
+	</style>
+	<script>
+		
+		$(function(){
+		let feild = $('.feild');
+		let wrap2 = $('.wrap2');
+		let wrap = $('.wrap');
+		let btn = $('.btn');
+		let cont = $('.cont');
+		feild.addClass('addfeild');
+		wrap2.addClass('addwrap2');
+		wrap.addClass('addwrap');
+		cont.addClass('addcont');
+		btn.each(function(i)
+		{
+		btn.eq(i).on("tap",frr);
+		});
+		function frr(i){
+			feild.removeClass('addfeild');
+			wrap2.removeClass('addwrap2');
+			wrap.removeClass('addwrap');
+			cont.removeClass('addcont');
+				for(var h=-4;h<4;h++)
+					{
+						if(h==0){h++;}
+						cont.eq(i+h).hide();
+						btn.eq(i+h).removeClass('changecolor');	
+					}
+		}
+			
+			btn.each(function(i)
+			{
+				btn.eq(i).click(function(){
+					cont.eq(i).show();
+					btn.eq(i).addClass('changecolor');
+					for(var h=-4;h<4;h++)
+					{
+						if(h==0){h++;}
+						cont.eq(i+h).hide();
+						btn.eq(i+h).removeClass('changecolor');	
+					}
+				});
+			});
+			if($(window).width()<=768){
+				btn.each(function(i)
+			{
+				cont.eq(i).on("swipeleft",function(){
+					if(i==4){return false;}
+					else if(i<4){
+					cont.eq(i+1).show(300);
+					btn.eq(i+1).addClass('changecolor');
+					for(var g=-2;g<3;g++)
+					{
+						if(g==1)g++;
+						cont.eq(i+g).hide(300);
+						btn.eq(i+g).removeClass('changecolor');
+
+					}
+					}					
+				});
+			});
+				btn.each(function(i)
+			{
+				cont.eq(i).on("swiperight",function(){
+					if(i==1){return false;}
+					else if(i>1){
+					cont.eq(i-1).show(300);
+					btn.eq(i-1).addClass('changecolor');
+					for(var g=-2;g<3;g++)
+					{
+						if(g==-1)g++;
+						cont.eq(i+g).hide(300);
+						btn.eq(i+g).removeClass('changecolor');
+					}	
+					}
+				});
+			});	
+		}	
+		if($(window).width()>=768){
+			$('.t').hide();
+			$('.bigword').css('width','100%');
+			$('.lorem').css('display','block');
+			$('.bigword').each(function(i){
+				$('.bigword').eq(i).click(function(){
+
+				$('.bigword').eq(i).css('width','40%');
+				$('.lorem').eq(i).css('display','flex');
+				$('.t').eq(i).show(1000);	
+			});
+			});
+		}
+	});
+
+	</script>
+</head>
+<body>
+
+	<div class="wrap2">
+			<div class="title">
+				<h3>VALSON</h3>
+			</div>
+			<div class="space"></div>
+		<div class="wrap">
+
+			<div class="feild f1">
+				<div class="btn"><a href="http://bassavg.com/forums.php" target=_blank>
+					<img src="https://i.imgur.com/uRjgQ4h.png" alt="論壇" class="img2"></a>
+				</div>
+				<div class="cont"></div>
+			</div>
+			<div class="feild f2">
+				<div class="btn"><img src="https://i.imgur.com/NcQgNOG.png" alt="關於" class="img2"></div>
+				<div class="cont c2" style="display: flex;">
+					<div class="img">
+						<img src="https://i.imgur.com/aJt396H.jpg">
+					</div>
+					<div class="lorem">
+						<div class="bigword">留言板<p>BOARD</p>
+						</div>
+						<div class="t t1">
+							<div class="wt">
+							<p class="tiny">如果想找我<b style="color:#bf7474;">聊天</b>請點"<a href="http://bassavg.com/forum.php?id=29d3dc627720dc329d6b2131a80f38ad" target="_blank">這裡"</a></p>
+							<p class="tiny">留言也可以私訊通知</p>
+							<p class="tiny">最後是，歡迎勾搭！！！！</p>
+							</div>
+						</div>
+						<div class="block block1">
+						<div class="bigword">關於<p>ABOUT ME</p></div>
+						<div class="t t2">
+							<div class="wt">
+							<p class="tiny">可以稱呼我為<b style="color:#bf7474;">繪森</b>，或是其他你喜歡的</p>
+							<p class="tiny">我喜歡<b style="color:#bf7474;">繪圖，寫作，和一點點網頁程式</b>（css、Html、javascript
+							）</p>
+							<p class="tiny">如果有同好，歡迎一起來交流！！</p>
+							<p class="tiny">對了，如果要問我個性的話，<b style="color:#bf7474;">自認為是個很悶騷的人。</b>還有每次玩遊戲總是BAD END或是DEATH END的人。因為總是三心二意不攻略同一個角色</p>
+							</div>
+						</div>
+						</div>
+						<div class="block block2">
+						<div class="t t2">
+							<div class="wt">
+							<p class="tiny">可以稱呼我為<b style="color:#bf7474;">繪森</b>，或是其他你喜歡的</p>
+							<p class="tiny">我喜歡<b style="color:#bf7474;">繪圖，寫作，和一點點網頁程式</b>（css、Html、javascript
+							）</p>
+							<p class="tiny">如果有同好，歡迎一起來交流！！</p>
+							<p class="tiny">對了，如果要問我個性的話，<b style="color:#bf7474;">自認為是個很悶騷的人。</b>還有每次玩遊戲總是BAD END或是DEATH END的人。因為總是三心二意不攻略同一個角色</p>
+
+							</div>
+						</div>
+						<div class="bigword">關於<p>ABOUT ME</p></div>
+						</div>
+						<div class="bigword">聯絡<p>CONTACT</p></div><div class="t t3">
+							<div class="wt">
+							<p class="tiny"><b>Email：valbb0220@gmail.com</b></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="feild f3">
+				<div class="btn"><img src="https://i.imgur.com/rU6pl6P.png" alt="寫作" class="img2"></div>
+				<div class="cont c3" style="display: flex;">
+					<div class="img">
+						<img src="https://i.imgur.com/tTSGyW1.jpg">
+					</div>
+					<div class="lorem">
+						<div class="cc3">
+							<div class="tc3">NOVEL</div>
+							<div class="para"></div>
+						</div>
+						<div class="cc3">
+							<div class="tc3">DIARY</div>
+							<div class="para"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="feild f4">
+				<div class="btn"><img src="https://i.imgur.com/yKSw6BO.png" alt="遊戲" class="img2"></div>
+				<div class="cont" style="display: flex;">
+					<div class="img">
+						<img src="https://picsum.photos/300/200?random=3">
+					</div>
+					<div class="lorem">
+						Lorem3 ipsum dolor, sit amet consectetur adipisicing, elit. Dolore repellat accusantium quaerat quia laboriosam. Porro deleniti molestias optio sunt commodi voluptate repellendus repudiandae minima explicabo! Mollitia, officia. Dicta aut aperiam doloremque voluptates accusamus, obcaecati nisi libero, veritatis! Voluptatum hic enim quisquam quae dignissimos aliquid corporis quidem quasi. Excepturi rerum sit dolorem ab sequi vero ea porro possimus, maiores. Et, reprehenderit.
+					</div>
+				</div>
+			</div>
+
+			<div class="feild f5">
+				<div class="btn"><img src="https://i.imgur.com/2Nc7p9X.png" alt="作品" class="img2"></div>
+				<div class="cont" style="display: flex;">
+					<div class="img">
+						<img src="https://picsum.photos/300/200?random=4">
+					</div>
+					<div class="lorem">
+						Lorem4 ipsum dolor sit, amet consectetur adipisicing elit. Nostrum perspiciatis facilis, vitae numquam aspernatur veritatis necessitatibus adipisci amet omnis. Vitae repudiandae a itaque. Ut labore magnam, eveniet, tempora officia reiciendis dolorem deserunt commodi. Tempora delectus debitis, aut in modi at quibusdam iure eaque doloribus voluptatum recusandae placeat libero, vero. Expedita atque eligendi, quia cumque quae eaque reprehenderit est mollitia, culpa.
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html><style>
+
+
+  

@@ -1,17 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="style.css">
 	<title>Document</title>
+	<style>
+		.wrap{
+			display: flex;
+			justify-content: center;
+			width: 100vw;
+			height: 100vh;
+			align-items: center;
+		}
+		.word{
+			font-family: 'Amatic SC', cursive;
+			font-size: 40px;
+			text-align: center;	
+		}
+		.word:after{
+			content: "";
+			height: 30px;
+			padding: 0 2px;
+			border-right: 1.5px solid #000;
+			animation: blink 0.5s infinite;
+		}
+		@keyframes blink {
+			0%{border: transparent;}
+			1000%{border: #000;}
+		}
+	</style>
+	<script>
+		const a='HAPPY@NEW@YEAR';
+		const a1='A place that can expressing youself.';
+		var w=document.getElementsByClassName("word");
+		var i = 0;
+		var flag=0;
+		function f(b){
+				console.log(b);
+				if(i==0)arr=b;
+				if(i<arr.length)
+				{
+					if(arr[i]=='@')
+					{
+						w[0].innerHTML += "<br>";
+
+					}
+					else
+					{
+					w[0].innerHTML += arr[i];
+					}
+					setTimeout('f()',250);
+					i++;
+				}
+				return i;
+			};
+		window.onload=function(){
+			console.log(f(a));
+			f(a1);
+		}
+	</script>
 </head>
-<body>
-	<div class="box1">
-	<p>1</p>
-	<p>2</p>
-	<p>3</p>
-	<p>4</p>
-	</div>
+<bod>
+	<div class="wrap"><div class="word"></div></div>
 </body>
 </html>

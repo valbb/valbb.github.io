@@ -1,0 +1,179 @@
+*{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+a{
+    text-decoration: none;
+    color:black;
+    font-size: 5vh;
+}
+.btitle{
+    font-size: 5vh;
+    text-align: center;
+    padding: 10px;
+}
+.stitle{
+    height: 100px;
+    line-height: 100px;
+    overflow: hidden;
+}
+.header{
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    background-color: burlywood;
+}
+.text{
+    font-weight: 900;
+}
+.text a{
+    padding: 10px;
+    font-size: 3vh;
+    line-height: 6vh;
+}
+
+.banner
+{
+    width: 100vw;
+    margin: auto;
+    overflow: hidden;
+}
+.banner-img{
+    display: flex;
+    width: 500%;
+}
+.banner-img input{
+    display: none
+}
+.img{
+    width: 20%;
+    transition: 2s;
+}
+.banner img{
+    width: 100vw;
+    height: 500px;
+}
+.banner-manual{
+    position: absolute;
+    width: 100vw;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
+.manualbtn{
+    border:3px solid #deb887;
+    padding:5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+.manualbtn:not(:last-child){
+    margin-right: 10vw;
+}
+.manualbtn:hover{
+    background-color: burlywood;
+}
+#radiobtn1:checked ~ .first{
+    margin-left: 0%;
+}
+#radiobtn2:checked ~ .first{
+    margin-left: -20%;
+}
+#radiobtn3:checked ~ .first{
+    margin-left: -40%;
+}
+#radiobtn4:checked ~ .first{
+    margin-left: -60%;
+}
+
+.wrap{
+    margin: auto;
+}
+.Work{
+    width: 80%;
+    margin:auto;
+    display: flex;
+    min-width: 300px;
+}
+.item{
+    width: 25%;
+    padding: 20px;
+}
+.item img{
+    width: 100%;
+}
+.stitle{
+    font-size: 3vh;
+    text-align: center;
+}
+.banner-auto{
+    position: absolute;
+    display: flex;
+    margin-top: 460px;
+    width: 100vw;
+    justify-content: center;
+}
+.banner-auto div:not(:last-child){
+    margin-right: 10vw;
+}
+.banner-auto div{
+    border:3px solid burlywood;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+}
+#radiobtn1:checked ~ .banner-auto .auto-btn1{
+    background: burlywood;
+}
+#radiobtn2:checked ~ .banner-auto .auto-btn2{
+    background: burlywood;
+}
+#radiobtn3:checked ~ .banner-auto .auto-btn3{
+    background: burlywood;
+}
+#radiobtn4:checked ~ .banner-auto .auto-btn4{
+    background: burlywood;
+}
+
+#signupform{
+    margin: auto;
+    font-size: 1.4vw;
+    display: block;
+    width: 600px;
+}
+#signupform input{
+    box-sizing: border-box;
+    margin: 20px;
+    height: 50px;
+    width: 600px;
+    display: block;
+}
+#signupform button{
+    padding: 5px 0;
+    text-shadow: 0;
+    background-color: black;
+    color: aliceblue;
+    border: 10px solid burlywood;
+    border-radius: 15px;
+    box-sizing: border-box;
+    margin: 20px;
+    height: 80px;
+    width: 600px;
+    display: block;
+}
+@media screen and (max-width:768px){
+    .Work{
+        display: block;
+    }
+    .item{
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .header{
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    #signupform,#signupform input,#signupform button{
+        width: 80%;
+    }
+}
